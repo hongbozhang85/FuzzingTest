@@ -1,0 +1,35 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252"></head><body><img src="user_sync_data/user_sync_003.gif" width="1" height="1"><img src="user_sync_data/getuid.gif" width="1" height="1"><iframe seamless="seamless" style="border:none;padding:0px;margin:0px;width:0px;height:0px;position:relative;display:block;" scrolling="no" scroll="no" src="https://image5.pubmatic.com/AdServer/usersync/usersync.html?predirect=https%3A%2F%2Fdelivery.swid.switchads.com%2Fadserver%2Fuser_sync.php%3FSWID%3Dfd9ff334ea4c392c8359587c8fec4629%26node%3Dhttps%253A%252F%252Fdelivery.g.switchadhub.com%252Fadserver%252Fuser_sync.php%253F1%2526SWID%253Dfd9ff334ea4c392c8359587c8fec4629%26sKey%3DPUB%26sVal%3D%5BSVAL%5D%26do%5Bsingle%5D%3D1&amp;userIdMacro=[SVAL]" frameborder="0"></iframe><img src="user_sync_data/img.gif" width="1" height="1"><img src="user_sync_data/sync_002.gif" width="1" height="1"><iframe seamless="seamless" style="border:none;padding:0px;margin:0px;width:0px;height:0px;position:relative;display:block;" scrolling="no" scroll="no" src="user_sync_data/usermatch.html" frameborder="0"></iframe><img src="user_sync_data/p-PKZhQpckCC_hH.gif" width="1" height="1"><img src="user_sync_data/sync.gif" width="1" height="1"><img src="user_sync_data/rtset.gif" width="1" height="1"><img src="user_sync_data/switchconcepts.gif" width="1" height="1"><script>
+var swid = 'fd9ff334ea4c392c8359587c8fec4629';
+if ('postMessage' in window && window.postMessage !== null) {
+    // all modern browsers support postMessage
+    try {
+        window.parent.postMessage(JSON.stringify({
+            switchconcepts: {
+                type: 'storeSwid',
+                data: {
+                    swid: swid
+                }
+            }
+        }), '*');
+    } catch(e) {
+        // no access to top domain, trafficked by third party, no first party sync available
+    }
+} else {
+    // Support for non-postMessage browsers (basically old IE)
+    try {
+        window.top.__switch_obj.storeSwid(swid, window.top.document);
+    } catch(e) {
+        // no access to top domain, trafficked by third party, no first party sync available
+    }
+
+    try{
+        // if we weren't delivered on the publisher site, send the message back to the frame we were delivered on
+        if(window.parent.parent !== window.top) {
+            window.parent.parent.__switch_obj.storeSwid(swid, window.top.document);
+        }
+    }catch(e){
+        // no access to grandparent, this shouldn't happen
+    }
+}
+</script></body></html>

@@ -1,0 +1,9 @@
+Adform=window.Adform||{};
+Adform.host="https://asia.adform.net";
+Adform.shost="https://s2.adform.net";
+Adform.scriptBase=Adform.shost+"/banners/scripts/";
+Adform.cache="587";
+Adform.ADFBannerData={URL:"https://asia.adform.net/adfserve/?bn=14282891;d=jeremykun.com;p=https%3A//jeremykun.com/2013/10/28/optimism-in-the-face-of-uncertainty-the-ucb1-algorithm/;pr=https://;ex=swi",CREFURL:"https%3a%2f%2fjeremykun.com%2f2013%2f10%2f28%2foptimism-in-the-face-of-uncertainty-the-ucb1-algorithm%2f",BN:"14282891",STUBFILE:null};
+if(!Adform.ADFBannerParams)Adform.ADFBannerParams=[];
+Adform.ADFBannerParams.push(Adform.ADFBannerData);
+typeof Adform.ADFUtilInstance=="undefined"?document.write('<scr'+'ipt type="text/javascript" src="https://s2.adform.net/stoat/587/s2.adform.net/bootstrap.js"></scr'+'ipt>'):new Adform.ADFBanner();

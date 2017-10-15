@@ -1,0 +1,8 @@
+*.iml
+.idea/
+out/
+*.aux
+*.log
+*.toc
+*.cls
+.Rhistory

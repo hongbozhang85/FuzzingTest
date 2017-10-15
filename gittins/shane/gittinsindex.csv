@@ -1,0 +1,5 @@
+Gittins Indices for Bernoulli Bandit Process
+	Discount Factor:  0.99 
+	Frontier Horizon:  750 
+	Delta:  1e-04 
+Rows are alpha, Columns are beta. 

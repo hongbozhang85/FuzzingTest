@@ -1,0 +1,1267 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+     
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    
+<head>  
+
+    <script type="text/javascript" src="http://c.csdnimg.cn/pubfooter/js/tracking.js" charset="utf-8"></script>  
+
+    <script type="text/javascript">
+        var protocol = window.location.protocol;
+        document.write('<script type="text/javascript" src="' + protocol + '//csdnimg.cn/pubfooter/js/repoAddr2.js?v=' + Math.random() + '"></' + 'script>');
+    </script>
+
+  
+ <meta http-equiv="Cache-Control" content="no-siteapp" /><link rel="alternate" media="handheld" href="#" />
+
+    <title>算法实习生学习之路--UCB算法 - yw8355507的专栏
+        - 博客频道 - CSDN.NET</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="栈。package com.zf.graph;/** * 栈 * @author zhoufeng * @param  */public class StackX {		private Object[] array ;	private int maxSize ;	private int size  ;		public StackX(int maxSize){" />
+    <script src="http://static.blog.csdn.net/scripts/jquery.js" type="text/javascript"></script>
+      <script type="text/javascript" src="http://static.blog.csdn.net/scripts/jquery-version.js"></script>
+    <script type="text/javascript" src="http://static.blog.csdn.net/scripts/ad.js?v=1.1"></script>
+        <!--new top-->
+               <link rel="stylesheet" href="http://c.csdnimg.cn/public/common/toolbar/css/index.css">        <!--new top-->
+    
+      <!-- ad begin -->
+         <script language="javascript" type="text/javascript" src="http://ads.csdn.net/js/tracking.js"></script>
+    <!-- ad end-->
+
+    <link rel="Stylesheet" type="text/css" href="http://static.blog.csdn.net/skin/default/css/style.css?v=1.1" />
+    <link id="RSSLink" title="RSS" type="application/rss+xml" rel="alternate" href="/yw8355507/rss/list" />
+    <link rel="shortcut icon" href="http://c.csdnimg.cn/public/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="http://static.blog.csdn.net/scripts/SyntaxHighlighter/styles/default.css" />
+ 
+
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?6bcd52f51e9b3dce32bec4a3997715ac";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+</head>
+<body>
+
+
+    <!-- 广告位开始 -->
+        <ins data-revive-zoneid="149" data-revive-id="8c38e720de1c90a6f6ff52f3f89c4d57"></ins>
+    <!-- 广告位结束 -->
+
+    
+   
+      <!--new top-->
+    <script id="toolbar-tpl-scriptId" fixed="true" prod="blog" skin="black" src="http://c.csdnimg.cn/public/common/toolbar/js/html.js" type="text/javascript"></script>
+     <!--new top-->
+    <div id="container">
+        <div id="header">
+    <div class="header">
+        <div id="blog_title">
+            <h2>
+                <a href="http://blog.csdn.net/yw8355507">yw8355507的专栏</a></h2>
+            <h3></h3>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+        
+     
+    </div>
+</div>
+<div id="navigator">
+    <div class="navigator_bg">
+    </div>
+    <div class="navigator">
+        <ul>           
+                <li id="btnContents"><a href="http://blog.csdn.net/yw8355507?viewmode=contents"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_mulu'])">
+                    <img src="http://static.blog.csdn.net/images/ico_list.gif">目录视图</span></a></li>
+                <li id="btnView"><a href="http://blog.csdn.net/yw8355507?viewmode=list"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_zhaiyao'])">
+                    <img src="http://static.blog.csdn.net/images/ico_summary.gif">摘要视图</span></a></li>
+                <li id="btnRss"><a href="http://blog.csdn.net/yw8355507/rss/list"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_RSS'])">
+                    <img src="http://static.blog.csdn.net/images/ico_rss.gif">订阅</span></a></li>                
+            
+
+            </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    var username = "yw8355507";
+    var _blogger = username;
+    var blog_address = "http://blog.csdn.net/yw8355507";
+    var static_host = "http://static.blog.csdn.net";
+    var currentUserName = "";  
+</script>
+
+        <div id="body">
+            <div id="main">
+                <div class="main">
+                        <div class="ad_class">
+<div class="notice tracking-ad" data-mod='popu_3' > 
+
+
+<a href="http://blog.csdn.net/vote/result.html
+">
+<font color=blue>CSDN 2016博客之星评选结果公布
+
+
+</font></a>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="http://edu.csdn.net/huiyiCourse/detail/259
+">
+<font color=red>【系列直播】算法与游戏实战技术
+</font></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="http://blog.csdn.net/blogdevteam/article/details/53636007">
+<font color=blue>“我的2016”主题征文活动
+</font></a>
+
+</div>                        </div>
+                        
+
+
+
+  
+<link href="http://static.blog.csdn.net/css/comment1.css" type="text/css" rel="stylesheet" />
+<link href="http://static.blog.csdn.net/css/style1.css" type="text/css" rel="stylesheet" />
+<script language='JavaScript' type='text/javascript' src='http://download.csdn.net/js/jquery.cookie.js'></script>
+<script type="text/javascript" src="http://c.csdnimg.cn/rabbit/search-service/main.js"></script>
+<link rel="stylesheet" href="http://static.blog.csdn.net/public/res-min/markdown_views.css?v=1.0" />
+<link rel="stylesheet" href="http://static.blog.csdn.net/css/category.css?v=1.0" />
+<script type="text/javascript" src="http://static.blog.csdn.net/public/res/bower-libs/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/web-storage-cache.min.js"></script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/replace.min.js"></script>
+
+
+
+
+  <script type="text/ecmascript">
+      window.quickReplyflag = true;
+           
+            var isBole = false;
+            
+      
+      var fasrc="http://my.csdn.net/my/favorite/miniadd?t=%e7%ae%97%e6%b3%95%e5%ae%9e%e4%b9%a0%e7%94%9f%e5%ad%a6%e4%b9%a0%e4%b9%8b%e8%b7%af--UCB%e7%ae%97%e6%b3%95&u=http://blog.csdn.net/yw8355507/article/details/48579635"
+
+    </script>
+<div id="article_details" class="details">
+    <div class="article_title">   
+         <span class="ico ico_type_Original"></span>
+
+
+    <h1>
+        <span class="link_title"><a href="/yw8355507/article/details/48579635">
+        <font color="red">[置顶]</font>
+        算法实习生学习之路--UCB算法            
+        </a></span>
+    </h1>
+</div>
+
+   
+
+        <div class="article_manage clearfix">
+        <div class="article_r">
+            <span class="link_postdate">2015-09-19 21:56</span>
+            <span class="link_view" title="阅读次数">2468人阅读</span>
+            <span class="link_comments" title="评论次数"> <a href="#comments" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_pinglun'])">评论</a>(2)</span>
+            <span class="link_collect tracking-ad" data-mod="popu_171"> <a href="javascript:void(0);" onclick="javascript:collectArticle('%e7%ae%97%e6%b3%95%e5%ae%9e%e4%b9%a0%e7%94%9f%e5%ad%a6%e4%b9%a0%e4%b9%8b%e8%b7%af--UCB%e7%ae%97%e6%b3%95','48579635');return false;" title="收藏">收藏</a></span>
+             <span class="link_report"> <a href="#report" onclick="javascript:report(48579635,2);return false;" title="举报">举报</a></span>
+
+        </div>
+    </div>
+    <div class="embody"  style="display:none" id="embody">
+        <span class="embody_t">本文章已收录于：</span>
+        <div class="embody_c" id="lib" value="{&quot;err&quot;:0,&quot;msg&quot;:&quot;ok&quot;,&quot;data&quot;:[]}"></div>
+    </div>
+    <style type="text/css">        
+            .embody{
+                padding:10px 10px 10px;
+                margin:0 -20px;
+                border-bottom:solid 1px #ededed;                
+            }
+            .embody_b{
+                margin:0 ;
+                padding:10px 0;
+            }
+            .embody .embody_t,.embody .embody_c{
+                display: inline-block;
+                margin-right:10px;
+            }
+            .embody_t{
+                font-size: 12px;
+                color:#999;
+            }
+            .embody_c{
+                font-size: 12px;
+            }
+            .embody_c img,.embody_c em{
+                display: inline-block;
+                vertical-align: middle;               
+            }
+             .embody_c img{               
+                width:30px;
+                height:30px;
+            }
+            .embody_c em{
+                margin: 0 20px 0 10px;
+                color:#333;
+                font-style: normal;
+            }
+    </style>
+    <script  type="text/javascript">
+        $(function () {
+            try
+            {
+                var lib = eval("("+$("#lib").attr("value")+")");
+                var html = "";
+                if (lib.err == 0) {
+                    $.each(lib.data, function (i) {
+                        var obj = lib.data[i];
+                        //html += '<img src="' + obj.logo + '"/>' + obj.name + "&nbsp;&nbsp;";
+                        html += ' <a href="' + obj.url + '" target="_blank">';
+                        html += ' <img src="' + obj.logo + '">';
+                        html += ' <em><b>' + obj.name + '</b></em>';
+                        html += ' </a>';
+                    });
+                    if (html != "") {
+                        setTimeout(function () {
+                            $("#lib").html(html);                      
+                            $("#embody").show();
+                        }, 100);
+                    }
+                }      
+            } catch (err)
+            { }
+            
+        });
+    </script>
+      <div class="category clearfix">
+        <div class="category_l">
+           <img src="http://static.blog.csdn.net/images/category_icon.jpg">
+            <span>分类：</span>
+        </div>
+        <div class="category_r">
+                    <label  onclick="GetCategoryArticles('5828013','yw8355507','top','48579635');">
+                        <span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_fenlei']);">机器学习<em>（4）</em></span>
+                      <img class="arrow-down" src="http://static.blog.csdn.net/images/arrow_triangle _down.jpg" style="display:inline;">
+                      <img class="arrow-up" src="http://static.blog.csdn.net/images/arrow_triangle_up.jpg" style="display:none;">
+                        <div class="subItem">
+                            <div class="subItem_t"><a  href="http://blog.csdn.net/yw8355507/article/category/5828013"  target="_blank">作者同类文章</a><i class="J_close">X</i></div>
+                            <ul class="subItem_l" id="top_5828013">                            
+                            </ul>
+                        </div>
+                    </label>                    
+        </div>
+    </div>
+    <script   type="text/javascript" src="http://static.blog.csdn.net/scripts/category.js"></script>  
+        <div   class="bog_copyright">         
+            <p  class="copyright_p" >版权声明：本文为博主原创文章，未经博主允许不得转载。</p>
+        </div>
+
+  
+
+  
+  
+     
+
+<div id="article_content" class="article_content">
+
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+<span style="font-size:32px; color:rgb(255,0,0)"><strong>前言：</strong></span></p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+<span style="white-space:pre"></span>&nbsp; &nbsp; &nbsp; 来万物花开这家创业公司实习，也真是一波三折。先实习了三天，每天下午到公司工作到晚上。工作时间是每天下午到晚上9.30。结果每天上午没法用心干实验室的活了，下午在公司工作的时候，总是提心吊胆，手机震动一下就会立刻拿出来看看是不是老师找我了。这样的日子感觉没法持续下去，想找导师谈谈之前，就从实验室同学那儿知道了老师对我最近的出勤率太低很不高兴。想着还是找找导师谈一谈实习的问题吧，然后还在犹豫的时候，大boss就找我谈话了，退学or干活。于是只能拒绝了实习，安心回实验室吧。</p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+<span style="white-space:pre"></span>意外的是，创业公司带我的老大陈开江师兄念在是北理工的同门师兄弟上，加上我对于转互联网方向的决心强烈，决定给我一个机会，每周一到周五晚上干活，周末拿一天时间出来交流，就算我实习三天了。只能说太感谢陈开江师兄了，让我在这么恶劣的条件下还给我实习的机会。</p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+<span style="font-size:24px; color:rgb(51,51,255)"><strong>我的github：</strong></span></p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+<span style="white-space:pre"></span>我实现的代码全部贴在我的github中，欢迎大家去参观。</p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+在作为算法实习生时，所实现的代码产权应该属于公司，所以在github中公布的代码可能会缺少一部分，或者比较简单，不涉及业务。</p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+<span style="white-space:pre"><strong>https://github.com/YinWenAtBIT</strong></span></p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+</p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+<span style="font-size:32px; color:rgb(255,0,0)"><strong>算法介绍：</strong></span></p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+<span style="font-size:24px; color:rgb(51,51,255)"><strong>背景介绍：</strong></span></p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+<strong>一、问题模型：</strong></p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+</p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+<strong>Multi-armed bandit问题，中文译名或叫做“<span style="color:rgb(51,51,51); font-family:arial,宋体,sans-serif,tahoma,'Microsoft YaHei'; font-size:14px; line-height:24px">多臂赌博机”问题。</span></strong><br>
+</p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+<span style="color:rgb(51,51,51); font-family:arial,宋体,sans-serif,tahoma,'Microsoft YaHei'; font-size:14px; line-height:24px">在概率论中，多臂赌博机问题（有时也称为K臂/N臂赌博机问题），是一个赌徒需要在一排老虎机前决定拉动哪一个老虎机的臂，并且决定每个臂需要被拉动多少次的问题。每台老虎机提供的奖励是与它自身的奖励随机分布的函数相关的。赌徒的目标是最大限度地通过杠杆拉动序列，使得获得的奖励最大化。<br>
+</span></p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+<span style="color:rgb(51,51,51); font-family:arial,宋体,sans-serif,tahoma,'Microsoft YaHei'; font-size:14px; line-height:24px">在实际应用中，多臂模型被用来模拟管理研究项目，比如一家制药公司，要给定一个的预算，问题是在各个项目中分配资源，项目的回报暂时只知道一部分，需要在项目进行的过程中才会知道的越来越清楚。<br>
+</span></p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+<span style="color:rgb(51,51,51); font-family:arial,宋体,sans-serif,tahoma,'Microsoft YaHei'; font-size:14px; line-height:24px">因此，在解决这个问题的时候，需要在“exploration”（探索新臂以获得跟多关于臂的回报的信息）和“exploitation”（选择已有回报最高的臂来获取最大利益）之中进行权衡。</span></p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+</p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+<strong>数学模型：</strong></p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+多个臂的回报可以看做是一组真实的随机分布<img src="http://img.blog.csdn.net/20150919213635833?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="">，<img src="http://img.blog.csdn.net/20150919214336362?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="">，K代表臂杆。<img src="http://img.blog.csdn.net/20150919214748059?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="">代表每个臂的平均回报，赌徒每一轮拉下一个臂，并得到一次回报，<img src="http://img.blog.csdn.net/20150919215018145?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="">是剩余可玩的轮数。多臂问题等同于一个状态的马尔科夫问题。<img src="http://img.blog.csdn.net/20150919215304024?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="">轮之后的后悔度为<img src="http://img.blog.csdn.net/20150919215319252?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="">，可用如下公式表示：<img src="http://img.blog.csdn.net/20150919215357230?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="">，其中<img src="http://img.blog.csdn.net/20150919215428114?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="">是最大回报的平均数，<img src="http://img.blog.csdn.net/20150919215342629?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="">，<img src="http://img.blog.csdn.net/20150919215528183?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="">是在t时获得的回报。</p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+一个零后悔度的策略会使得<img src="http://img.blog.csdn.net/20150919215757244?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="">在无限次选择臂杆后以概率1趋近与0。那么，零后悔策略将在玩了足够多次之后趋近与最优策略。</p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+</p>
+<p style="font-family:Arial; line-height:26px"><strong><span style="font-size:24px; color:#3333ff">UCB1算法：</span></strong></p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+UCB – The Upper Confidence BoundAlgorithm，上置信算法<br>
+</p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+<span style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px"><strong>小量贪婪算法和SOFTMAX算法缺陷：</strong></span></p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+前面所提及的算法（《Bandit Algorithms for Website Optimization》一书的前几章所介绍的算法，这里我直接拿它总结的结果使用）有一个弱点，它们只关心回报是多少，并不关心每个臂被拉下了多少次，这就意味着，这些算法不再会选中初始回报特别低臂，即使这个臂的回报只测试了一次。使用UCB1算法，将会不仅仅关注于回报，同样会关注每个臂被探索的次数。</p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+在介绍UCB1算法之前，先总结一下前几章的介绍的epsilon-Greedy and Softmax algorithms（小量贪婪算法和SOFTMAX算法）的特点：</p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+1.默认选择当前已知的回报率最高的臂杆</p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+2.偶尔选择那些没有最高回报的臂杆</p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+——小量贪婪算法随机选择，这样其他每个臂被选中的概率很小；</p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+——<span style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">SOFTMAX算法根据回报率选择臂杆，回报率比最大&#20540;小很多的臂杆很少选中，回报率接近最大&#20540;的笔杆被选中的概率接近最大臂被选中的概率</span></p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+为了让这两种算法表现更好，我们可以在运行过程中动态的修改它们的参数，这种方式叫做退火算法。</p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+我们需要知道每个臂的回报的置信度是因为，我们得到的每一个臂的回报结果是随机的，其中含有噪声。臂A看起来&#20284;乎比臂B选择要好，只有我们得到了足够多的数据，这时我们才能确认臂A优于臂B。</p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+其他两种算法是容易被误导的，初始遇上了一次随机坏的结果，会把这个结果当做这个臂的回报。UCB算法不会受到臂回报随机性的影响。</p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+因此，在实现UCB算法时，我们需要记录下对每个臂回报的置信度，做法是记录下每个臂被选择了多少次。</p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+<strong>UCB1算法特性：</strong></p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+在实现UCB算法的时候，我们不需要关心其他的假设条件，只要满足一个条件：回报是分布在0-1之间，1代表最大的回报。如果使用的模型最大回报结果超出了这个范围，需要对结果进行归一化。</p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+除了保存每个臂结果的置信度以外，UCB算法还在以下两个点不同与之前的算法：</p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+1. UCB完全不使用随机性，每一种情况下，UCB选择的臂都是可以通过数据计算出来的</p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+2. UCB算法没有任何需要配置的参数，这意味着，在任何情况下你都可以使用UCB算法，没有任何需要的先验条件</p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+<strong>UCB算法实现：</strong></p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+每个臂包含的数据：</p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+</p>
+<pre name="code" class="cpp">struct UCBNode
+{
+	int counts;
+	double values;
+};
+</pre>UCB类成员：
+<p></p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+</p>
+<pre name="code" class="cpp">class UCB1
+{
+public:
+	UCB1();
+	~UCB1();
+	bool update(string &amp; key, double res);
+   	bool update(const char *startPos, double res);
+   	string toString();
+	bool readFromString(const string&amp; JString);
+	string select_arm();
+	std::vector&lt;std::string&gt; &amp; select_arm_N(size_t n);
+	std::vector&lt;std::string&gt; keystrs;
+private:
+	insert(string &amp; key, UCB value);
+	std::unordered_map&lt;string, UCB&gt; frequencyReward; 
+	int totalcount;
+};</pre><br>
+<br>
+<p></p>
+<p></p>
+<p>选择臂：</p>
+<p>UCB算法选择臂算法如下：</p>
+<p>1. 如果有counts为0的臂，即从未被选择的臂，那么先选择它（即初始时每个臂都会被选择一次）</p>
+<p>2. 如果所有臂都被选择过，则计算每个臂的bonus和value的和，bonus计算公式如下：</p>
+<p></p>
+<pre name="code" class="cpp">bonus = sqrt((2 *total_counts) / float(counts);</pre>3.选择其中bonus加value&#20540;最大臂
+<p></p>
+<p></p>
+<pre name="code" class="cpp">string UCB1::select_arm()
+{
+	string maxkey;
+
+	double bonus;
+	double maxvalue = 0.0;
+
+	if(frequencyReward.empty())
+	throw empty_arm(&quot;no arm in the map&quot;);
+
+	for(auto it = frequencyReward.begin(); it != frequencyReward.end(); it++ )
+	{
+		if(it-&gt;second.counts == 0)
+			return it-&gt;first;
+		
+		bonus = sqrt(2* log((double)totalcount))/it-&gt;second.counts;
+		if(maxvalue &lt; bonus + it-&gt;second.values)
+		{
+			maxvalue = bonus + it-&gt;second.values;
+			maxkey = it-&gt;first;
+		}
+	}
+
+	return maxkey;
+}</pre><br>
+<br>
+因为每一个臂都需要至少被选择一次，因此，在使用UCB算法时需要注意，如果选择的次数M小于总的臂数N，就要谨慎使用UCB算法了。
+<p></p>
+<p>bonus的意义在于，如果我们对一个臂的了解过于少，因此它的value&#20540;在此时的置信度是很低的，所以我们需要选择这个臂来获取更多的信息。因此，bonus可以当做一个测量对臂了解多少的指标，了解越少，bonus越大。加入了bonus这个指标，我们可以说这个算法是有好奇心的，当对于一个臂的了解少于了下限，它会被选中，即使这个臂的回报率很低。</p>
+<p><br>
+</p>
+<p>更新臂：</p>
+<p>每一个臂被选中之后，会返回一个value，那么更新的方法如下：</p>
+<p>1.该臂的counts成员数加一</p>
+<p>2. 该臂的value变为：原有的value&#20540;和新返回的结果value&#20540;按比例相加</p>
+<p></p>
+<pre name="code" class="cpp">values = values*(n-1)/n + res/n;</pre>
+<p><br>
+</p>
+<br>
+<br>
+<p></p>
+<strong>验证UCB算法：</strong>
+<p></p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+当我们使用UCB算法，它会以怎样的频率来选中最优的臂？答案在最开始时，所有的臂的置信度都很低，因此每个臂都会被选中几次，此时选中最优臂的概率不高，当已经选择了很多次时，每个臂的置信度都已经相当高了，此时会一直选择最优臂，偶尔选择其他置信度过低的臂。如下图所示</p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+<img src="http://img.blog.csdn.net/20150920011606300?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""><br>
+</p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+<strong>UCB算法与其他算法对比：</strong></p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+这里，我们使用退火版本的小量贪婪算法和Softmax算法与UCB1算法对比，一共有5个臂供选择。</p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+首先是选中最优臂的概率:</p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+可以明显看到，UCB1算法的波动明显高于其他两个算法。不过在模拟末尾处，UCB算法已经追上了其他的两个算法，如果模拟的次数跟多，UCB算法将会优于其他两个算法。</p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+<img src="http://img.blog.csdn.net/20150920012713542?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""><br>
+</p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+然后是平均的回报率：</p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+UCB算法能很快找到最优的臂，不过优于为了提高每一个臂的置信度，它回去选择那些回报率不高的臂，因此收敛于最优臂的速度慢于softamx算法，平均回报率也低于它。</p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+<img src="http://img.blog.csdn.net/20150920012718042?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""><br>
+</p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+最后是总回报率：</p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+总回报率的结果已经可以由上一张平均回报率看出来了。softmax最高，UCB第二，小量贪婪最低。</p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+<img src="http://img.blog.csdn.net/20150920012722292?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""><br>
+</p>
+<p style="font-family:Arial; line-height:26px"><strong><span style="font-size:32px; color:#ff0000">总结：</span></strong></p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+在实现UCB算法的过程中，首先捡回来了阅读英文文献的能力，UCB算法的内容基本是通过一本英文教材还有英文的维基百科上学习到的。其实以前英文一直挺好的，只是太久不用，忘了挺多。第二点就是对于C&#43;&#43;STL库以及模板类的复习，平时stl库还能偶尔用一用，但是map,set等就用的特别少了，更别说模板类了，这次好好的复习了一遍。第三就是学习了一些新的东西，比如Json&#26684;式保存数据对，ssh登陆等等一些开发的额外知识。实习的收获确实很大。</p>
+<p style="color:rgb(51,51,51); font-family:Arial; font-size:14px; line-height:26px">
+<br>
+</p>
+   
+</div>
+
+
+
+
+<!-- Baidu Button BEGIN -->
+
+
+
+
+<div class="bdsharebuttonbox tracking-ad" style="float: right;" data-mod="popu_172">
+<a href="#" class="bds_more" data-cmd="more" style="background-position:0 0 !important; background-image: url(http://bdimg.share.baidu.com/static/api/img/share/icons_0_16.png?v=d754dcc0.png) !important"></a>
+<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"  style="background-position:0 -52px !important"></a>
+<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"style="background-position:0 -104px !important"></a>
+<a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"style="background-position:0 -260px !important"></a>
+<a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"style="background-position:0 -208px !important"></a>
+<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"style="background-position:0 -1612px !important" ></a>
+</div>
+<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
+<!-- Baidu Button END -->
+
+   <link rel="stylesheet" href="http://static.blog.csdn.net/css/blog_detail.css" />
+
+    
+<!--172.16.140.12-->
+
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=1536434" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+    document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->
+
+ 
+
+        <div id="digg" ArticleId="48579635" >
+            <dl id="btnDigg" class="digg digg_disable"  onclick="btndigga();">
+               
+                 <dt>顶</dt>
+                <dd>0</dd>
+            </dl>
+           
+              
+            <dl id="btnBury" class="digg digg_disable"  onclick="btnburya();">
+              
+                  <dt>踩</dt>
+                <dd>0</dd>               
+            </dl>
+            
+        </div>
+     <div class="tracking-ad" data-mod="popu_222"><a href="javascript:void(0);" >&nbsp;</a>   </div>
+    <div class="tracking-ad" data-mod="popu_223"> <a href="javascript:void(0);" >&nbsp;</a></div>
+    <script type="text/javascript">
+                function btndigga() {
+                    $(".tracking-ad[data-mod='popu_222'] a").click();
+                }
+                function btnburya() {
+                    $(".tracking-ad[data-mod='popu_223'] a").click();
+                }
+            </script>
+
+   <ul class="article_next_prev">
+                <li class="prev_article"><span  onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shangyipian']);location.href='/yw8355507/article/details/48490177';">上一篇</span><a href="/yw8355507/article/details/48490177" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shangyipian'])">《数据结构与算法分析》寻找欧拉回路--多次修改最终复杂度O(E+V)</a></li>
+                <li class="next_article"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_xiayipian']);location.href='/yw8355507/article/details/48742695';">下一篇</span><a href="/yw8355507/article/details/48742695" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_xiayipian'])">《数据结构与算法分析》贪婪算法与分治算法--二维最近点问题详解</a></li>
+    </ul>
+
+    <div style="clear:both; height:10px;"></div>
+
+
+        <div class="similar_article"  style="display:none">
+                <h4>我的同类文章</h4>
+                <div class="similar_c"style="margin:20px 0px 0px 0px">
+                    <div class="similar_c_t">
+                                <label class="similar_cur">
+                                    <span  style="cursor:pointer"  onclick="GetCategoryArticles('5828013','yw8355507','foot','48579635');">机器学习<em>（4）</em></span>
+                                </label>
+                    </div>
+                   
+                    <div class="similar_wrap tracking-ad" data-mod="popu_141"  style="max-height:195px;">
+                        <a href="http://blog.csdn.net" style="display:none">http://blog.csdn.net</a>
+                        <ul class="similar_list fl">                          
+                        </ul>
+
+                        <ul class="similar_list fr">                           
+                        </ul>
+                    </div>
+                </div>
+            </div>    
+    <script  type="text/javascript">
+        $(function () {
+            GetCategoryArticles('5828013', 'yw8355507','foot','48579635');
+        });
+    </script>
+      
+</div>
+
+    <div>
+    <ins data-revive-zoneid="205" data-revive-id="8c38e720de1c90a6f6ff52f3f89c4d57"></ins> 
+        </div>
+
+<div id="suggest"></div>
+         <script  language="javascript" type='text/javascript'>     
+             $(function(){
+                 $.get("/yw8355507/svc/GetSuggestContent/48579635",function(data){
+                     $("#suggest").html(data);
+                 });     
+             });             
+         </script>  
+
+
+<style>
+.blog-ass-articl dd {
+color: #369;
+width: 99%; /*修改行*/
+float: left;
+overflow: hidden;
+font: normal normal 12px/23px "SimSun";
+height: 23px;
+margin: 0;
+padding: 0 0 0 10px;
+margin-right: 30px;
+background: url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;
+}
+</style>
+
+ <link rel="stylesheet" href="http://static.blog.csdn.net/css/replace.css"/>
+<div id="relate" data-mod="popu_218"  class="tracking-ad">
+        <div class="relate_t">
+            <h3><span>参考知识库</span></h3>
+        </div>
+        <div class="relate_c">
+        </div>
+</div>
+ 
+
+<dl class="blog-ass-articl" id="res-relatived" > 
+    <div class="embody embody_b" id="libkeyparent"  style="display:none">
+            <span class="embody_t">更多资料请参考：</span>
+            <div class="embody_c" id="libkey"></div>
+    </div>
+
+
+     <dt><span>猜你在找</span></dt>    
+
+
+   
+
+
+    <div id="adCollege" style="width: 42%;float: left;"> 
+        <script src="http://csdnimg.cn/jobreco/job_reco.js" type="text/javascript"></script> 
+        <script type="text/javascript">
+            csdn.position.showEdu({
+                sourceType: "blog",
+                searchType: "detail",
+                searchKey: "48579635",
+                username: "",
+                recordcount: "5",
+                containerId: "adCollege" //容器DIV的id。 
+            });
+        </script> 
+    </div>  
+
+    
+     <div id="res"  data-mod="popu_36"  class="tracking-ad" style="width: 42%;float: left;margin-right: 30px;"></div>
+   
+</dl>
+
+
+<script type="text/javascript">
+    $(function () {
+        setTimeout(function () {
+            var searchtitletags = '算法实习生学习之路--UCB算法' + ',' + $("#tags").html();
+            searchService({
+                index: 'blog',
+                query: searchtitletags,
+                from: 5,
+                size: 5,
+                appendTo: '#res',
+                url: 'recommend',
+                his: 2,
+                client: "blog_cf_enhance",
+                tmpl: '<dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="#{ url }" title="#{ title }" strategy="#{ strategy }">#{ title }</a></dd>'
+            });
+        }, 500);
+    });    
+
+ </script>  
+
+
+    <div id="ad_cen">        
+<ins data-revive-zoneid="71" data-revive-id="8c38e720de1c90a6f6ff52f3f89c4d57"></ins>    </div>  
+
+    <!-- 广告位开始 -->
+    <ins data-revive-zoneid="72" data-revive-id="8c38e720de1c90a6f6ff52f3f89c4d57"></ins>
+    <!-- 广告位结束 -->
+
+<div class="comment_class">
+    <div id="comment_title" class="panel_head">
+        <span class="see_comment">查看评论</span><a name="comments"></a></div>
+    <div id="comment_list">
+    </div>
+    <div id="comment_bar">
+    </div>
+    <div id="comment_form">
+    </div>
+    <div class="announce">
+        * 以上用户言论只代表其个人观点，不代表CSDN网站的观点或立场<a name="reply"></a><a name="quote"></a></div>
+</div>
+
+<script type="text/javascript">
+    var fileName = '48579635';
+    var commentscount = 2;
+    var islock = false
+</script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/comment.js"></script>
+    <div id="ad_bot">
+    </div>
+<div id="report_dialog">
+</div>
+
+<div id="d-top"  style="bottom:60px;">
+
+        <a id="quick-reply" class="btn btn-top q-reply" title="快速回复" style="display:none;">
+            <img src="http://static.blog.csdn.net/images/blog-icon-reply.png" alt="快速回复">
+        </a>    
+    <a id="d-top-a" class="btn btn-top backtop"  style="display: none;" title="返回顶部" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_huidaodingbu'])" style="">         
+         <img src="http://static.blog.csdn.net/images/top.png" alt="TOP">
+    </a>
+</div>
+<script type="text/javascript">
+    $(function ()
+    {
+        $("#ad_frm_0").height("90px");
+        
+        setTimeout(function(){
+            $("#ad_frm_2").height("200px");
+        },1000);    
+    });
+  
+</script>
+<style type="text/css">
+    .tag_list
+    {
+        background: none repeat scroll 0 0 #FFFFFF;
+        border: 1px solid #D7CBC1;
+        color: #000000;
+        font-size: 12px;
+        line-height: 20px;
+        list-style: none outside none;
+        margin: 10px 2% 0 1%;
+        padding: 1px;
+    }
+    .tag_list h5
+    {
+        background: none repeat scroll 0 0 #E0DBD3;
+        color: #47381C;
+        font-size: 12px;
+        height: 24px;
+        line-height: 24px;
+        padding: 0 5px;
+        margin: 0;
+    }
+    .tag_list h5 a
+    {
+        color: #47381C;
+    }
+    .classify
+    {
+        margin: 10px 0;
+        padding: 4px 12px 8px;
+    }
+    .classify a
+    {
+        margin-right: 20px;
+        white-space: nowrap;
+    }
+</style>
+
+
+<div class="tag_list" style="display:none"></div>
+  <script  language="javascript" type='text/javascript'>     
+      $(function(){
+              setTimeout(function(){
+                  $.get("/yw8355507/svc/GetTagContent",function(data){
+                      $(".tag_list").html(data).show();
+                  });     
+              });
+          },500);                       
+ </script> 
+
+
+<div id="pop_win" style="display:none ;position: absolute; z-index: 10000; border: 1px solid rgb(220, 220, 220); top: 222.5px; left: 630px; opacity: 1; background: none 0px 0px repeat scroll rgb(255, 255, 255);">
+    
+</div>
+<div id="popup_mask"></div>
+<style>
+    #popup_mask
+    {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        z-index: 9999;
+        left: 0px;
+        top: 0px;
+        opacity: 0.3;
+        filter: alpha(opacity=30);
+        display: none;
+    }
+
+</style>
+
+
+
+
+<script type="text/javascript">
+    $(function(){
+        setTimeout(function(){
+            $(".comment_body:contains('回复')").each(function(index,item){
+                var u=$(this).text().split('：')[0].toString().replace("回复","")
+                var thisComment=$(this);
+                if(u)
+                {
+                    $.getJSON("https://passport.csdn.net/get/nick?callback=?", {users: u}, function(a) {
+                        if(a!=null&&a.data!=null&&a.data.length>0)
+                        {
+                            nick=a.data[0].n; 
+                            if(u!=nick)
+                            {
+                                thisComment.text(thisComment.text().replace(u,nick));  
+                            }
+                        }       
+                    });  
+                }
+            });         
+
+        },200);  
+
+        setTimeout(function(){
+            $(".math").each(function(index,value){$(this).find("span").last().css("color","#fff"); })
+        },5000);
+
+        setTimeout(function(){
+            $(".math").each(function(index,value){$(this).find("span").last().css("color","#fff"); })
+        },10000);
+
+        setTimeout(function(){
+            $(".math").each(function(index,value){$(this).find("span").last().css("color","#fff"); })
+        },15000);
+        
+        setTimeout(function(){
+            $("a img[src='http://js.tongji.linezing.com/stats.gif']").parent().css({"position":"absolute","left":"50%"});
+        },300);
+    });
+
+    function loginbox(){
+        var $logpop=$("#pop_win");
+        $logpop.html('<iframe src="https://passport.csdn.net/account/loginbox?service=http://static.blog.csdn.net/callback.htm" frameborder="0" height="600" width="400" scrolling="no"></iframe>');
+
+        $('#popup_mask').css({
+            opacity: 0.5,
+            width: $( document ).width() + 'px',
+            height:  $( document ).height() + 'px'
+        });
+        $('#popup_mask').css("display","block");
+ 
+        $logpop.css( {
+            top: ($( window ).height() - $logpop.height())/ 2  + $( window 
+       ).scrollTop() + 'px',
+            left:($( window ).width() - $logpop.width())/ 2
+        } );
+ 
+        setTimeout( function () {
+            $logpop.show();
+            $logpop.css( {
+                opacity: 1
+            } );
+        }, 200 );
+ 
+        $('#popup_mask').unbind("click");
+        $('#popup_mask').bind("click", function(){
+            $('#popup_mask').hide();
+            var $clopop = $("#pop_win");
+            $("#common_ask_div_sc").css("display","none");
+            $clopop.css( {
+                opacity: 0
+            } );
+            setTimeout( function () {
+                $clopop.hide();
+            }, 350 );
+            return false;
+        });
+    }   
+
+</script>
+ <script language="javascript" type="text/javascript" src="http://ads.csdn.net/js/async_new.js"></script>      
+
+
+
+
+                        <div class="clear">
+                        </div>
+                    </div>                   
+                
+            </div>
+                   
+           <div id="side">
+               
+    <div class="side">
+<div id="panel_Profile" class="panel">
+<ul class="panel_head"><span>个人资料</span></ul>
+<ul class="panel_body profile">
+<div id="blog_userface">
+    <a href="http://my.csdn.net/yw8355507" target="_blank">
+    <img src="http://avatar.csdn.net/7/4/0/1_yw8355507.jpg" title="访问我的空间" style="max-width:90%"/>
+    </a>
+    <br />
+    <span><a href="http://my.csdn.net/yw8355507" class="user_name" target="_blank">yw8355507</a></span>
+</div>
+<div class="interact">
+
+    <a href="javascript:void(0);" class="attent" id="span_add_follow" title="[加关注]"></a>
+
+ <a href="javascript:void(0);" class="letter"  title="[发私信]" onclick="window.open('http://msg.csdn.net/letters/model?receiver=yw8355507','_blank','height=350,width=700');_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_sixin'])"></a>  
+</div>
+<div id="blog_medal">
+                <div id="bms_box">
+                                            <a  target="_blank">
+                                                    <img src="http://c.csdnimg.cn/jifen/images/xunzhang/xunzhang/chizhiyiheng.png" onmouseover="m_over_m(this,4)" onmouseout="m_out_m()" alt="3" >
+                                            </a>
+               </div>
+</div>
+<ul id="blog_rank">
+    <li>访问：<span>24188次</span></li>
+    <li>积分：<span>1008</span> </li>    
+    <li >等级： <span style="position:relative;display:inline-block;z-index:1" >
+            <img src="http://c.csdnimg.cn/jifen/images/xunzhang/jianzhang/blog4.png" alt="" style="vertical-align: middle;" id="leveImg">
+            <div id="smallTittle" style=" position: absolute;  left: -24px;  top: 25px;  text-align: center;  width: 101px;  height: 32px;  background-color: #fff;  line-height: 32px;  border: 2px #DDDDDD solid;  box-shadow: 0px 2px 2px rgba (0,0,0,0.1);  display: none;   z-index: 999;">
+            <div style="left: 42%;  top: -8px;  position: absolute;  width: 0;  height: 0;  border-left: 10px solid transparent;  border-right: 10px solid transparent;  border-bottom: 8px solid #EAEAEA;"></div>
+            积分：1008 </div>
+        </span>  </li>
+    <li>排名：<span>千里之外</span></li>
+</ul>
+<ul id="blog_statistics">
+    <li>原创：<span>75篇</span></li>
+    <li>转载：<span>13篇</span></li>
+    <li>译文：<span>0篇</span></li>
+    <li>评论：<span>26条</span></li>
+</ul>
+</ul>
+</div>
+
+
+<div class="panel" id="panel_Search">
+    <ul class="panel_head"><span>文章搜索</span></ul>
+    <ul class="panel_body">
+        <form id="frmSearch" action="http://so.csdn.net/search" class="form_search" target="_blank">
+        <span><input id="inputSearch" type="text" class="blogsearch" title="请输入关键字" /></span>
+        <input id="btnSubmit" type="button" value="搜索" title="search in blog" />
+        <input type="hidden" name="q" id="inputQ" />
+        <input type="hidden" name="t" value="blog" />
+        <a id="btnSearchBlog" target="_blank"></a>
+        </form>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $("#btnSubmit").click(function () {           
+            search();
+        });
+
+        $("#frmSearch").submit(function () {
+            search();
+            return false;
+        });
+
+        function search()
+        {
+            var url = "http://so.csdn.net/so/search/s.do?q=" + encodeURIComponent($("#inputSearch").val()) + "&u=" + username + "&t=blog";
+            window.location.href = url;
+        }   
+    });
+</script><div id="panel_Category" class="panel">
+<ul class="panel_head"><span>文章分类</span></ul>
+<ul class="panel_body">    
+                 <li>
+                    <a href="/yw8355507/article/category/2897919" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">linux学习</a><span>(10)</span>
+                </li>
+                 <li>
+                    <a href="/yw8355507/article/category/3199209" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">网络编程学习</a><span>(18)</span>
+                </li>
+                 <li>
+                    <a href="/yw8355507/article/category/5642253" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">C++</a><span>(4)</span>
+                </li>
+                 <li>
+                    <a href="/yw8355507/article/category/5642451" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">mysql</a><span>(1)</span>
+                </li>
+                 <li>
+                    <a href="/yw8355507/article/category/5670807" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">数据结构</a><span>(25)</span>
+                </li>
+                 <li>
+                    <a href="/yw8355507/article/category/5812607" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">人生道路</a><span>(6)</span>
+                </li>
+                 <li>
+                    <a href="/yw8355507/article/category/5828013" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">机器学习</a><span>(5)</span>
+                </li>
+                 <li>
+                    <a href="/yw8355507/article/category/5915127" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">深入理解计算机系统</a><span>(9)</span>
+                </li>
+                 <li>
+                    <a href="/yw8355507/article/category/6060364" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">现代操作系统</a><span>(6)</span>
+                </li>
+                 <li>
+                    <a href="/yw8355507/article/category/6111429" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Effective C++</a><span>(3)</span>
+                </li>
+</ul>
+</div><div id="panel_Archive" class="panel">
+<ul class="panel_head"><span>文章存档</span></ul>
+<ul class="panel_body">
+<div id="archive_list">
+<!--归档统计-->
+<li><a href="/yw8355507/article/month/2016/07">2016年07月</a><span>(2)</span></li><li><a href="/yw8355507/article/month/2016/05">2016年05月</a><span>(3)</span></li><li><a href="/yw8355507/article/month/2016/04">2016年04月</a><span>(7)</span></li><li><a href="/yw8355507/article/month/2016/03">2016年03月</a><span>(1)</span></li><li><a href="/yw8355507/article/month/2016/02">2016年02月</a><span>(4)</span></li><li><a href="/yw8355507/article/month/2016/01">2016年01月</a><span>(8)</span></li><li><a href="/yw8355507/article/month/2015/12">2015年12月</a><span>(4)</span></li><li><a href="/yw8355507/article/month/2015/11">2015年11月</a><span>(4)</span></li><li><a href="/yw8355507/article/month/2015/10">2015年10月</a><span>(11)</span></li><li><a href="/yw8355507/article/month/2015/09">2015年09月</a><span>(6)</span></li><li><a href="/yw8355507/article/month/2015/08">2015年08月</a><span>(9)</span></li><li><a href="/yw8355507/article/month/2015/07">2015年07月</a><span>(9)</span></li><li><a href="/yw8355507/article/month/2015/06">2015年06月</a><span>(8)</span></li><li><a href="/yw8355507/article/month/2015/05">2015年05月</a><span>(3)</span></li><li><a href="/yw8355507/article/month/2015/04">2015年04月</a><span>(5)</span></li><li><a href="/yw8355507/article/month/2015/03">2015年03月</a><span>(4)</span></li><li><a href="/yw8355507/article/month/2015/02">2015年02月</a><span>(1)</span></li>
+</div>
+</ul>
+</div>
+<div id="hotarticls" class="panel">
+<ul class="panel_head">
+    <span>       
+阅读排行    </span>
+</ul>
+
+<ul class="panel_body itemlist">
+<li>
+<a href="/yw8355507/article/details/48579635" title="算法实习生学习之路--UCB算法">算法实习生学习之路--UCB算法</a><span>(2465)</span>
+</li>
+<li>
+<a href="/yw8355507/article/details/50759612" title="工作前最后一个寒假——刷题的日子">工作前最后一个寒假——刷题的日子</a><span>(1011)</span>
+</li>
+<li>
+<a href="/yw8355507/article/details/48490177" title="《数据结构与算法分析》寻找欧拉回路--多次修改最终复杂度O(E+V)">《数据结构与算法分析》寻找欧拉回路--多次修改最终复杂度O(E+V)</a><span>(691)</span>
+</li>
+<li>
+<a href="/yw8355507/article/details/51164428" title="C++11——新特性总结">C++11——新特性总结</a><span>(625)</span>
+</li>
+<li>
+<a href="/yw8355507/article/details/50564704" title="店铺与品牌的关键字搜索——wand(wead and)算法简介与改造">店铺与品牌的关键字搜索——wand(wead and)算法简介与改造</a><span>(563)</span>
+</li>
+<li>
+<a href="/yw8355507/article/details/44733027" title="学完了《鸟哥Linux私房菜》大体回顾以及感悟。">学完了《鸟哥Linux私房菜》大体回顾以及感悟。</a><span>(557)</span>
+</li>
+<li>
+<a href="/yw8355507/article/details/48932359" title="《数据结构与算法分析》详细对比自顶向下与自底向上红黑树——C实现自顶向下插入与删除">《数据结构与算法分析》详细对比自顶向下与自底向上红黑树——C实现自顶向下插入与删除</a><span>(536)</span>
+</li>
+<li>
+<a href="/yw8355507/article/details/48868173" title="《数据结构与算法分析》回溯算法之博弈——三连棋（tic tac toe）人机对战AI设计（αβ枝减）">《数据结构与算法分析》回溯算法之博弈——三连棋（tic tac toe）人机对战AI设计（αβ枝减）</a><span>(493)</span>
+</li>
+<li>
+<a href="/yw8355507/article/details/49206395" title="算法实习生之路——推荐算法实践，一个小的UCB算法Demo">算法实习生之路——推荐算法实践，一个小的UCB算法Demo</a><span>(445)</span>
+</li>
+<li>
+<a href="/yw8355507/article/details/46852225" title="C++矩阵处理库（比LAPACK更方便）——Eigen详细解析">C++矩阵处理库（比LAPACK更方便）——Eigen详细解析</a><span>(418)</span>
+</li>
+</ul>
+</div>
+<div id="hotarticls2" class="panel">
+<ul class="panel_head"><span>评论排行</span></ul>
+<ul class="panel_body itemlist">
+<li>
+<a href="/yw8355507/article/details/47108351" title="《数据结构与算法分析》伸展树（自顶向下）详解">《数据结构与算法分析》伸展树（自顶向下）详解</a><span>(4)</span>
+</li>
+<li>
+<a href="/yw8355507/article/details/47188719" title="《数据结构与算法分析》哈希表（散列）简介与实现">《数据结构与算法分析》哈希表（散列）简介与实现</a><span>(4)</span>
+</li>
+<li>
+<a href="/yw8355507/article/details/50759612" title="工作前最后一个寒假——刷题的日子">工作前最后一个寒假——刷题的日子</a><span>(3)</span>
+</li>
+<li>
+<a href="/yw8355507/article/details/47076701" title="《数据结构与算法分析》AVLTree详解">《数据结构与算法分析》AVLTree详解</a><span>(3)</span>
+</li>
+<li>
+<a href="/yw8355507/article/details/47664121" title="《数据结构与算法分析》排序算法总结">《数据结构与算法分析》排序算法总结</a><span>(3)</span>
+</li>
+<li>
+<a href="/yw8355507/article/details/47075765" title="《数据结构与算法分析》搜索二叉树详解">《数据结构与算法分析》搜索二叉树详解</a><span>(2)</span>
+</li>
+<li>
+<a href="/yw8355507/article/details/48579635" title="算法实习生学习之路--UCB算法">算法实习生学习之路--UCB算法</a><span>(2)</span>
+</li>
+<li>
+<a href="/yw8355507/article/details/51853905" title="自己写的HTTP服务器与muduo库对比——找出代码中的不足">自己写的HTTP服务器与muduo库对比——找出代码中的不足</a><span>(1)</span>
+</li>
+<li>
+<a href="/yw8355507/article/details/50564704" title="店铺与品牌的关键字搜索——wand(wead and)算法简介与改造">店铺与品牌的关键字搜索——wand(wead and)算法简介与改造</a><span>(1)</span>
+</li>
+<li>
+<a href="/yw8355507/article/details/48932359" title="《数据结构与算法分析》详细对比自顶向下与自底向上红黑树——C实现自顶向下插入与删除">《数据结构与算法分析》详细对比自顶向下与自底向上红黑树——C实现自顶向下插入与删除</a><span>(1)</span>
+</li>
+</ul>
+</div>
+<div id="homepageArticles" class="panel tracking-ad" data-mod="popu_4">
+<ul class="panel_head"><span>推荐文章</span></ul>
+<ul class="panel_body" id="ad_commend">
+<ul>
+<li><a href="http://blog.csdn.net/lmj623565791/article/details/53370414" target="_blank">* Android 反编译初探 应用是如何被注入广告的</a></li>
+<li><a href="http://blog.csdn.net/foruok/article/details/53500801" 
+target="_blank">* 凭兴趣求职80%会失败，为什么</a></li>
+<li><a href="http://blog.csdn.net/AndroidMsky/article/details/53490459" 
+target="_blank">* 安卓微信自动抢红包插件优化和实现</a></li>
+<li><a href="http://blog.csdn.net/poem_qianmo/article/details/53240330" target="_blank">* 【游戏设计模式】之四 《游戏编程模式》全书内容提炼总结</a></li>
+<li><a href="http://blog.csdn.net/jiangwei0910410003/article/details/53404018" 
+target="_blank">* 带你开发一款给Apk中自动注入代码工具icodetools(完善篇)</a></li>
+
+
+</ul></ul>
+</div>
+
+
+<div id="newcomments" class="panel">
+<ul class="panel_head"><span>最新评论</span></ul>
+<ul class="panel_body itemlist">
+    <li>
+   
+         <a href="/yw8355507/article/details/48932359#comments">《数据结构与算法分析》详细对比自顶向下与自底向上红黑树——C实现自顶向下插入与删除</a>
+    <p style="margin:0px;"><a href="/sun_xo" class="user_name">sun_xo</a>:
+这一阵刚在学习《DSAA》，目前卡在红黑树的删除这里了，等回头拜读博主的文章。
+    </p>
+    </li>
+    <li>
+   
+         <a href="/yw8355507/article/details/47075765#comments">《数据结构与算法分析》搜索二叉树详解</a>
+    <p style="margin:0px;"><a href="/yw8355507" class="user_name">yw8355507</a>:
+@zhangruyu:按照逻辑来说是大于，这里没说清楚
+    </p>
+    </li>
+    <li>
+   
+         <a href="/yw8355507/article/details/47075765#comments">《数据结构与算法分析》搜索二叉树详解</a>
+    <p style="margin:0px;"><a href="/zhangruyu" class="user_name">zhangruyu</a>:
+在insert部分，“3 若插入的元素值不小于根节点值”   这里应该写错了吧？应该是小于，这里的代...
+    </p>
+    </li>
+    <li>
+   
+         <a href="/yw8355507/article/details/51853905#comments">自己写的HTTP服务器与muduo库对比——找出代码中的不足</a>
+    <p style="margin:0px;"><a href="/tubin100" class="user_name">tubin100</a>:
+加油，你不是一个人在战斗
+    </p>
+    </li>
+    <li>
+   
+         <a href="/yw8355507/article/details/51254838#comments">HTTP协议——学完之后的总结(上)</a>
+    <p style="margin:0px;"><a href="/tubin100" class="user_name">tubin100</a>:
+加油，一定要去BAT
+    </p>
+    </li>
+    <li>
+   
+         <a href="/yw8355507/article/details/48579635#comments">算法实习生学习之路--UCB算法</a>
+    <p style="margin:0px;"><a href="/yw8355507" class="user_name">yw8355507</a>:
+@Qian_z:不好意思啊，不太明白您所说的Q值指的什么。这个算法在我这边是用于给用户推荐商品，没有...
+    </p>
+    </li>
+    <li>
+   
+         <a href="/yw8355507/article/details/48579635#comments">算法实习生学习之路--UCB算法</a>
+    <p style="margin:0px;"><a href="/Qian_z" class="user_name">Qian_z</a>:
+你好，请问赌博机的Q值采用的是什么分布？方差和均值是多少呢？
+    </p>
+    </li>
+    <li>
+   
+         <a href="/yw8355507/article/details/49421423#comments">记拿到360云引擎部门实习offer</a>
+    <p style="margin:0px;"><a href="/aj_shang" class="user_name">aj_shang</a>:
+好厉害
+    </p>
+    </li>
+    <li>
+   
+         <a href="/yw8355507/article/details/50759612#comments">工作前最后一个寒假——刷题的日子</a>
+    <p style="margin:0px;"><a href="/SugaryoTT" class="user_name">SugaryoTT</a>:
+看到楼住的经验分享，感触颇深啊~~~受教了~加油！
+    </p>
+    </li>
+    <li>
+   
+         <a href="/yw8355507/article/details/50759612#comments">工作前最后一个寒假——刷题的日子</a>
+    <p style="margin:0px;"><a href="/sinox2010p1" class="user_name">sinox2010p1</a>:
+也算是学习提高的好方法，笔试很有用
+    </p>
+    </li>
+</ul>
+</div>
+    </div>
+    <div class="clear">
+    </div>
+
+
+                   <!-- 广告位开始 --> 
+                    <ins data-revive-zoneid="190" data-revive-id="8c38e720de1c90a6f6ff52f3f89c4d57"></ins> 
+                    <!-- 广告位结束 -->
+
+           </div>   
+
+            <div class="clear">
+            </div>
+        </div>
+
+        
+
+<script type="text/javascript" src="http://c.csdnimg.cn/rabbit/cnick/cnick.js"></script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/newblog.min.js"></script>
+
+
+<script type="text/javascript" src="http://medal.blog.csdn.net/showblogmedal.ashx?blogid=4956093"></script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/JavaScript1.js"></script>
+
+    <script type="text/javascript" src="http://passport.csdn.net/content/loginbox/login.js"></script>
+<script type="text/javascript">document.write("<img src=http://counter.csdn.net/pv.aspx?id=24 border=0 width=0 height=0>");</script>
+<script type="text/javascript" src="http://www.csdn.net/ui/scripts/Csdn/counter.js"></script>
+<script type="text/javascript" src="http://ad.csdn.net/scripts/ad-blog.js"></script>
+<script type="text/javascript">
+    $(function () {
+        function __get_code_toolbar(snippet_id) {
+            return $("<span class='tracking-ad' data-mod='popu_167'><a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "' target='_blank' title='在CODE上查看代码片'  style='text-indent:0;'><img src='https://code.csdn.net/assets/CODE_ico.png' width=12 height=12 alt='在CODE上查看代码片' style='position:relative;top:1px;left:2px;'/></a></span>"
+                    + "<span class='tracking-ad' data-mod='popu_170'><a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "/fork' target='_blank' title='派生到我的代码片' style='text-indent:0;'><img src='https://code.csdn.net/assets/ico_fork.svg' width=12 height=12 alt='派生到我的代码片' style='position:relative;top:2px;left:2px;'/></a></span>");
+        }
+        
+        $("[code_snippet_id]").each(function () {
+            __s_id = $(this).attr("code_snippet_id");
+            if (__s_id != null && __s_id != "" && __s_id != 0 && parseInt(__s_id) > 70020) {
+                __code_tool = __get_code_toolbar(__s_id);
+                $(this).prev().find(".tools").append(__code_tool);
+            }
+        });
+
+        $(".bar").show();
+    });
+</script>
+
+
+
+
+
+    </div>
+      <!--new top-->
+    
+    <script id="csdn-toolbar-id" btnId="header_notice_num" wrapId="note1" count="5" subCount="5" type="text/javascript" src="http://c.csdnimg.cn/public/common/toolbar/js/toolbar.js"></script>     <!--new top-->
+   
+    <link href="http://c.csdnimg.cn/comm_ask/css/ask_float_block.css" type="text/css" rel="stylesheet" />
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/libs/wmd.js'></script>
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/libs/showdown.js'></script>
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/libs/prettify.js'></script>
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/apps/ask_float_block.js'></script>
+   
+
+   
+
+  <div id="a52b5334d" style="width: 1px; height: 1px; display: none;">
+                    <script id="adJs52b5334"></script>
+                    <script>document.getElementById("adJs52b5334").src = "http://ads.csdn.net/js/opt/52b5334.js?t=" + Math.random();</script>
+   </div>
+
+    <link rel="stylesheet" href="http://static.blog.csdn.net/css/blog_code.css" />
+    <script type="text/javascript" src="http://static.blog.csdn.net/scripts/saveToCode.js"></script>
+      <script type="text/javascript" src="//csdnimg.cn/rabbit/tracking-ad/main.js?75eacd8"></script>
+
+     <link rel="stylesheet" href="http://static.blog.csdn.net/css/fa.css" />
+
+    <div class="pop_CA_cover"  style="display:none"></div>
+    <div class="pop pop_CA"  style="display:none">
+          <div class="CA_header">
+            收藏助手
+            <span class="cancel_icon"  id="fapancle"  onclick="$('.pop_CA').hide();$('.pop_CA_cover').hide();"></span>
+          </div>
+          <iframe src="" id="fa" frameborder="0" width="100%" height="360"  scrolling="no" />
+    </div>
+</body>
+</html>   
+ 

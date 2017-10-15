@@ -1,0 +1,104 @@
+experiments, we use BFF, a typical fuzzer used in prac-
+tice, though the general approach should apply to any
+fuzzer using seeds. Our techniques also make no specific
+assumptions about the fuzz scheduling algorithm, thus are
+agnostic to the overall fuzzing infrastructure. To evaluate
+seed selection strategies, we use popular scheduling algo-
+rithms such as round-robin, as well as the best possible
+(optimal) scheduling.
+We motivate our research with the problem setting of
+creating a hypothetical fuzzing testbed for our system,
+called COVERSET . COVERSET periodically monitors the
+internet, downloads programs, and fuzzes them. The goal
+of COVERSET is to maximize the number of bugs found
+within a limited time period or budget. Since budgets are
+forever constrained, we wish to make intelligent design
+decisions that employ the optimal algorithms wherever
+possible. How shall we go about building such a system?
+Realizing such an intelligent fuzzing system highlights
+several deep questions:
+Q1. Given millions, billions, or even trillions of PDF
+files, which should you use when fuzzing a PDF
+viewer? More generally, what algorithms produce
+the best result for seed selection of S 0 ✓ S in step 3?
+Q2. How do you measure the quality of a seed selection
+technique independently of the fuzzing scheduling al-
+gorithm? For example, if we ran algorithm A on seed
+set S 1 and S 2 , and S 1 maximized bugs, we would still
+be left with the possibility that with a more intelli-
+gent scheduling algorithm A 0 would do better with
+S 2 rather than S 1 . Can we develop a theory to jus-
+tify when one seed set is better than another with
+the best possible fuzzing strategy, instead of specific
+examples?
+Q3. Can we converge on a "good" seed set for fuzzing
+campaigns on programs for a particular file type?
+Specifically, if S 0 performs well on program P 1 , how
+does it work on other similar applications P 2 , P 3 , . . .?
+If there is one seed set that works well across all
+programs, then we would only need to precompute it
+once and forever use it to fuzz any application. Such
+a strategy would save immense time and effort in
+practice. If not, we will need to recompute the best
+seed set for each new program.
+Our main contribution are techniques for answering the
+above questions. To the best of our knowledge, many of
+the above problems have not been formalized or studied
+systematically. In particular:
+• We formalize, implement, and test a number of ex-
+isting and novel algorithms for seed selection.
+• We formalize the notion of ex post facto optimality
+seed selection and give the first strategy that pro-
+862 23rd USENIX Security Symposium
+vides an optimal algorithm even if the bugs found by
+different seeds are correlated.
+• We develop evidence-driven techniques for identi-
+fying the quality of a seed selection strategy with
+respect to an optimal solution.
+• We perform extensive fuzzing experiments using
+over 650 CPU days on Amazon EC2 to get ground
+truth on representative applications. Overall, we find
+240 unique bugs in 8 widely-used applications, all of
+which are on the attack surface (they are often used
+to process untrusted input, e.g., images, network
+files, etc.), most of which are security-critical.
+While our techniques are general and can be used on
+any data set (and are the main contribution of this work),
+our particular result numbers (as any in this line of re-
+search) are data dependent. In particular, our initial set
+of seed files, programs under test, and time spent test-
+ing are all important factors. We have addressed these
+issues in several ways. First, we have picked several ap-
+plications in each file type category that are typical of
+fuzzing campaigns. This mitigates incorrect conclusions
+from a non-representative data set or a particularly bad
+program. Second, we have performed experiments with
+reasonably long running times (12 hour campaigns per
+file), accumulating over 650 CPU days of Amazon EC2
+time. Third, we are making our data set and code avail-
+able, so that: 1) others need not spend time and money
+on fuzzing to replicate our data set, 2) others can further
+analyze the statistics to dig out additional meaning (e.g.,
+perform their own hypothesis testing), and 3) we help
+lower the barrier for further improvements to the science
+of vulnerability testing and fuzzing. For details, please
+visit: http://security.ece.cmu.edu/coverset/.
+2
+Q1: Seed Selection
+How shall we select seed files to use for the fuzzer? For
+concreteness, we downloaded a set of seed files S con-
+sisting of 4, 912, 142 distinct files and 274 file types from
+Bing. The overall database of seed files is approximately
+6TB. Fuzzing each program for a sufficient amount of
+time to be effective across all seed files is computationally
+expensive. Further, sets of seed files are often duplicative
+in the behavior elicited during fuzzing, e.g., s 1 may pro-
+duce the same bugs as s 2 , thus fuzzing both s 1 and s 2 is
+wasteful. Which subset of seed files S 0 ✓ S shall we use
+for fuzzing?
+Several papers [1, 11], presentations from well-
+respected computer security professionals [8, 22, 26], as
+well as tools such as Peach [9], suggest using executable
+code coverage as a seed selection strategy. The intuition is
+that many seed files likely execute the same code blocks,
+USENIX Association
